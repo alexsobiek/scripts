@@ -1,0 +1,2 @@
+# smx8fancontrol
+The original smx8fancontrol script was developed by [ikus060](https://gist.github.com/ikus060/26a33ce1e82092b4d2dbdf18c3610fde) and was designed to "edit the X8DTL-iF Registry to control fan speed". This version implements changes suggested by [jeee](https://github.com/jeee) which fixes number conversions as mentioned in [this comment](https://gist.github.com/ikus060/26a33ce1e82092b4d2dbdf18c3610fde#gistcomment-3765072).
