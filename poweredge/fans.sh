@@ -39,7 +39,7 @@ help() {
 if [[ -n "$1" ]]; then                          # Check if we have a first parameter
     if [[ $(type -t $@) == function ]]; then    # Check if the first parameter is a function
         $@                                      # Call the function
-    elif (( $1 >= 0 && $1 <= 100)); then        # Check if the first parameter is a number between 2 and 100
+    elif (( $1 >= 0 && $1 <= 100)); then        # Check if the first parameter is a number between 0 and 100
         value '0x'$(printf "%x" $1)             # Convert to hex and set the fans to the given percentage
     else
         help
