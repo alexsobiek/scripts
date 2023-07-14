@@ -1,0 +1,2 @@
+# Run a check every minute to make sure we have our gretap interfaces and proper bridge configurations
+* * * * * root sudo /data/on_boot.d/50-gretap.sh check
