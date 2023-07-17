@@ -49,7 +49,7 @@ will reach the proper VLAN destination on the UDM Pro side.
 
 #### Remote Router
 I have shared a portion of my working configuration for OpenWRT 
-[here](https://github.com/alexsobiek/scripts/blob/main/gretap-vlan/openwrt/network). You should be able to do it on any 
+[here](https://github.com/alexsobiek/scripts/blob/main/udm-pro/gretap-vlan/openwrt/network). You should be able to do it on any 
 linux box, however. You'll need 1 bridge interface per VLAN, and one GRETAP tunnel per bridge interface. 
 
 ### Finishing Up
