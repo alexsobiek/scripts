@@ -30,19 +30,22 @@ my UDM Pro, and my remote router as a client.
 At the top of `50-gretap.sh` are a few variables which look like this:
 
 ```bash
-# Define end points for tunnel
-# This was tested using Wireguard, but should work over anything
-LOCAL=172.30.0.1
-REMOTE=172.30.0.201
+LOCAL=172.30.0.1        # Local address
+REMOTES=(172.30.0.201)  # Remote hosts we want to tunnel to
+VLANS=(2 3 28 32)       # VLANs we want to tag
 
+LAN_BR=br0      # What bridge should we use for default LAN traffic (NO tagged VLAN)
+BRIDGE=true     # Should we add our VLANs to their respective bridges? As in br2 for VLAN 2?
 
-# Define VLANs we want to tunnel
-# 0 is default LAN
-VLANS=(0 2)
+TAP=gretap1000  # Interface name
+KEY=1000        # Key for GRE tunnel (must be same on both ends)
 ```
 
-These define the local and remote IPs of your two routers, and the VLANs you want to transport. VLAN ID 0 (which really
-isn't a VLAN) is your LAN network. 
+These define the local and remote IPs of your two routers, and the VLANs you want to transport. This script can be
+used on both the UDM Pro and another router, but the `BRIDGE` option may or may not suit your needs on a non-UDM Pro
+device since the UDM Pro creates a bridge interface for every VLAN. If that does not work for you, all you need is 
+to tag the VLAN on the remote router side using the TAP interface. Any traffic passed through that tagged interface 
+will reach the proper VLAN destination on the UDM Pro side.
 
 #### Remote Router
 I have shared a portion of my working configuration for OpenWRT 

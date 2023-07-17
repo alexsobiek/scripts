@@ -1,7 +1,7 @@
 #!/bin/bash
-LOCAL=172.30.0.1        # Local address
-REMOTES=(172.30.0.201)  # Remote hosts we want to tunnel to
-VLANS=(2 3)             # VLANs we want to tag
+LOCAL=10.5.104.1        # Local address
+REMOTES=(10.5.104.155)  # Remote hosts we want to tunnel to
+VLANS=(2 3 28 32)       # VLANs we want to tag
 
 LAN_BR=br0      # What bridge should we use for default LAN traffic (NO tagged VLAN)
 BRIDGE=true     # Should we add our VLANs to their respective bridges? As in br2 for VLAN 2?
