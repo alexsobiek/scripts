@@ -28,7 +28,6 @@ DEV_MAP["/devices/platform/soc/3f980000.usb"]="/dev/zwave"
 if [ "$ACTION" = "add" ]; then
     # Create device symlink
     for device in "${!DEV_MAP[@]}"; do
-        echo $device;
         if [[ "$DEVPATH" == "$device"* ]]; then
             ln -s "/dev/$MDEV" "${DEV_MAP[$device]}"
         fi
